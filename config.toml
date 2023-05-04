@@ -1,0 +1,13 @@
+baseURL = 'https://toilbusters.com/'
+languageCode = 'en-us'
+title = 'Toilbusters'
+theme = 'binario'
+mainSections = ["posts", "projects", "events"]
+
+[params]
+disableThemeToggle = true
+defaultTheme = "dark"
+
+[params.label]
+icon = "logo.png"
+iconHeight = "50px"
