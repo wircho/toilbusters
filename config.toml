@@ -11,3 +11,19 @@ defaultTheme = "dark"
 [params.label]
 icon = "logo.png"
 iconHeight = "50px"
+
+
+[[menu.main]]
+    name = "Contribute"
+    url = "/new-page/"
+    weight = 5
+
+[[menu.main]]
+    name = "Subscribe"
+    url = "/new-page/"
+    weight = 5
+
+[[menu.main]]
+    name = "Latests"
+    url = "/new-page/"
+    weight = 6
