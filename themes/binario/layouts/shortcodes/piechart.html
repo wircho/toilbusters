@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Automation Statistics Pie Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        #container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#automationChart {
+    width: 0%;
+    height: 20%;
+    margin-left: 0em;
+    flex: 0.5;
+}
+
+#legend {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 2em;
+    margin-left: 0;
+    padding-left: 0;
+    flex: 1;
+}
+
+#legend li {
+    display: flex;
+    align-items: center;
+    margin-top: 0.2em;
+    margin-bottom: 0.0em;
+}
+
+#legend li div {
+    flex: 0 0 20px;
+    width: 35em;
+    height: 1em;
+    margin-right: 0.5em;
+}
+
+    </style>
+</head>
+<body>
+
+<div id="container" style="width:25%; height:50%">
+    <canvas id="automationChart"></canvas>
+    <ul id="legend"></ul>
+</div>
+
+<script>
+var ctx = document.getElementById('automationChart').getContext('2d');
+var labels = ['Initiated and expanding automation across multiple business areas', 'Implemented full automation in one business function, yet to scale it across other areas', 'Piloting automation in one business function or unit', 'Planning to initiate automation processes within the next year', 'No current automation processes nor plans for implementation'];
+var colors = ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)'];
+var myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        datasets: [{
+            data: [15, 16, 35, 14, 20],
+            backgroundColor: colors,
+            borderColor: colors.map(color => color.replace('0.2', '1')),
+            borderWidth: 1
+        }]
+    },
+    options: {
+        maintainAspectRatio: false,
+        responsive: true,
+        legend: {
+            display: false
+        },
+        title: {
+            display: true,
+            text: 'Organizations on automation as of 2020'
+        },
+	layout: {
+            padding: {
+                left: 0,
+                right: 0
+            }
+		}
+    }
+});
+
+// Create the legend manually
+var legend = document.getElementById('legend');
+labels.forEach(function(label, i) {
+    var li = document.createElement('li');
+    var box = document.createElement('div');
+    box.style.backgroundColor = colors[i];
+    box.style.borderColor = colors[i].replace('0.2', '0.5');
+    box.style.borderWidth = '0.5px';
+    box.style.borderStyle = 'solid';
+    li.appendChild(box);
+    li.appendChild(document.createTextNode(label));
+    legend.appendChild(li);
+});
+</script>
+<br>
+<br>
+</body>
+</html>
