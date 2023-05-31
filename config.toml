@@ -20,10 +20,15 @@ iconHeight = "50px"
 
 [[menu.main]]
     name = "Subscribe"
-    url = "/new-page/"
+    url = "/subscribe/"
     weight = 5
+
+[[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 6
 
 [[menu.main]]
     name = "Latests"
     url = "/new-page/"
-    weight = 6
+    weight = 7
